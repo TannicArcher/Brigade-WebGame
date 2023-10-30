@@ -1,0 +1,237 @@
+.boss-container {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    margin: 5px;
+}
+.boss-container > * {
+    margin: 5px;
+}
+
+.boss-tabs {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-shrink: 0;
+}
+.boss-tabs button {
+    display: block;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    margin: 2px;
+}
+
+.boss-tabs button.active {
+    color: #ffa200;
+}
+
+.tabContent {
+    display: none;
+}
+
+.boss-info {
+    background: #222222;
+    padding: 10px 15px;
+    border-radius: 8px;
+    flex-grow: 1;
+    margin: 7px;
+}
+
+@media all and (max-width: 368px) {
+    .boss-container {
+        flex-flow: column nowrap;
+    }
+    .boss-tabs {
+        flex-flow: row wrap;
+    }
+    .boss-tabs button {
+        text-align: center;
+    }
+
+    .boss-tabs button img {
+        width: 48px;
+    }
+}
+
+.room-container {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    margin: 5px;
+    align-items: flex-start;
+}
+.room-container > * {
+    margin: 5px;
+}
+
+.room-boss {
+    flex-basis: 86px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.room-boss-title {
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.room-info {
+    background: #222222;
+    padding: 10px;
+    border-radius: 8px;
+    flex-grow: 1;
+    margin: 7px;
+    color: #999999;
+    font-size: 11px;
+}
+
+.room-members {
+    background: #2f2f2f;
+    padding: 10px;
+    border-radius: 8px;
+    flex-grow: 3;
+    margin: 7px;
+}
+
+.image-background,
+.image-boss {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 86px;
+}
+
+.image-background {
+    height: 86px;
+    position: relative;
+}
+
+.image-boss {
+    height: 86px;
+    position: relative;
+    bottom: 0;
+}
+
+.members-container {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.members-container > *{
+    margin: 1px;
+}
+
+input[type='submit']{
+    padding: 5px;
+}
+
+@media all and (max-width: 768px) {
+    .room-container {
+        flex-flow: column wrap;
+        align-items: stretch;
+    }
+}
+
+.fight-container {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #2c2c2c;
+    overflow: hidden;
+}
+.fight-container > * {
+    margin: 5px;
+}
+
+.fight-boss {
+    flex-basis: 340px;
+}
+
+.fight-side {
+    display: flex;
+    flex-flow: column wrap;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.fight-background,
+.fight-boss-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 320px;
+}
+
+.fight-background {
+    height: 320px;
+    position: relative;
+}
+
+.fight-boss-image {
+    height: 320px;
+    position: relative;
+    bottom: 0;
+}
+
+.fights-action {
+    margin: 2px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.fights-action-outline {
+    border: 1px solid #111111;
+}
+
+.action-price {
+    padding: 2px 4px;
+}
+.action-price-title {
+    color: #ffa200;
+    font-weight: bold;
+    font-size: 11px;
+}
+.action-price-info {
+    margin-top: 4px;
+    color: #ffffff;
+    font-size: 10px;
+}
+
+@media all and (max-width: 768px) {
+    .fight-container {
+        flex-flow: column wrap;
+    }
+
+    .fight-side {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        flex-shrink: 1;
+    }
+    .fights-action {
+        flex-grow: 1;
+    }
+    .fight-boss {
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+    
+    .fight-background,
+    .fight-boss-image {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 240px;
+    }
+    
+    .fight-background {
+        height: 240px;
+        position: relative;
+    }
+    
+    .fight-boss-image {
+        height: 240px;
+        position: relative;
+        bottom: 0;
+    }
+}

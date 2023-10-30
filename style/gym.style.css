@@ -1,0 +1,91 @@
+.gym-card {
+    position: relative;
+    cursor: pointer;
+    max-width: 100%;
+    padding: 10px 0;
+    background: #333333;
+    box-shadow: 0 0 6px 0 rgba(32, 32, 36, 0.12);
+    transition: all 0.35s ease;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 64px;
+}
+
+.gym-card::before,
+.gym-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffb533;
+    height: 4px;
+}
+
+.gym-card::before {
+    width: 0;
+    opacity: 0;
+    transition: opacity 0 ease, width 0 ease;
+    transition-delay: 0.5s;
+}
+
+.gym-card::after {
+    width: 100%;
+    background: #333333;
+    transition: width 0.5s ease;
+}
+
+.gym-card .content {
+    max-width: 100%;
+    padding: 10px 20px;
+}
+
+.gym-card h6 {
+    color: #ffb533;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.gym-card .hover_content {
+    overflow: hidden;
+    max-height: 0;
+    max-width: calc(100% - 100px);
+    transform: translateY(1em);
+    transition: all 0.55s ease;
+}
+
+.gym-card:hover .hover_content {
+    margin: 1.5em 0 0 0;
+    color: #6E6E70;
+    line-height: 1.4em;
+}
+
+.gym-card:hover {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.gym-card:hover::before {
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease;
+    transition-delay: 0;
+}
+
+.gym-card:hover::after {
+    width: 0;
+    opacity: 0;
+    transition: width 0 ease;
+}
+
+
+.gym-card:hover .hover_content {
+    max-height: 500px;
+    transform: none;
+}
+
+
+

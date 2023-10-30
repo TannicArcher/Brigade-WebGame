@@ -1,0 +1,109 @@
+AddDefaultCharset utf-8
+DirectoryIndex index.php
+Options -Indexes
+
+php_value display_errors 1
+php_value display_startup_errors 1
+php_value error_reporting E_ALL
+  
+RewriteEngine On
+
+RewriteRule ^/?$ index.php [L,QSA]
+
+RewriteRule ^404?$ 404.php [L,QSA]
+RewriteRule ^rules/?$ rules.php [L,QSA]
+RewriteRule ^gift/?$ pages/other/gift.php [L,QSA]
+
+RewriteRule ^sign/in/?$ pages/account/sign.php?method=in [L,QSA]
+
+RewriteRule ^api/worldkassa?$ api/wkPayment.php [L,QSA]
+RewriteRule ^api/fk?$ api/fkPayment.php [L,QSA]
+
+RewriteRule ^inventory/?$ pages/account/profile.php?method=weapons [L,QSA]
+RewriteRule ^inventory/objects?$ pages/account/profile.php?method=objects [L,QSA]
+RewriteRule ^inventory/backgrounds?$ pages/account/profile.php?method=backgrounds [L,QSA]
+
+RewriteRule ^save/?$ pages/account/save.php [L,QSA]
+RewriteRule ^logout/?$ pages/account/logout.php [L,QSA]
+
+RewriteRule ^r/([0-9]*)/?$ index.php?ref=$1 [L,QSA]
+RewriteRule ^referral/?$ pages/account/refferals.php [L,QSA]
+RewriteRule ^referral/list/?$ pages/account/refferals.php?method=list [L,QSA]
+
+RewriteRule ^gym/?$ pages/other/gym.php [L,QSA]
+RewriteRule ^dayQuest/?$ pages/other/dayQuest.php [L,QSA]
+RewriteRule ^buffet/?$ pages/other/buffet.php [L,QSA]
+RewriteRule ^washhouse/?$ pages/map/washhouse.php [L,QSA]
+RewriteRule ^blackmarket/?$ pages/market/blackmarket.php [L,QSA]
+
+RewriteRule ^boss/?$ pages/boss/index.php [L,QSA]
+RewriteRule ^boss/room/([0-9]*)/?$ pages/boss/index.php?method=room&id=$1 [L,QSA]
+RewriteRule ^boss/fight/([0-9]*)/?$ pages/boss/index.php?method=fight&id=$1 [L,QSA]
+RewriteRule ^boss/list/([0-9]*)/?$ pages/boss/index.php?method=list&id=$1 [L,QSA]
+
+RewriteRule ^boss/chatLoad/?$ pages/boss/chat.php [L,QSA]
+
+RewriteRule ^street/?$ pages/map/street.php [L,QSA]
+RewriteRule ^map/?$ pages/map/index.php [L,QSA]
+RewriteRule ^map/([0-9]*)/?$ pages/map/district.php?id=$1 [L,QSA]
+RewriteRule ^district/?$ pages/map/business.php [L,QSA]
+
+RewriteRule ^market/?$ pages/market/index.php [L,QSA]
+
+RewriteRule ^forum/?$ pages/forum/index.php [L,QSA]
+RewriteRule ^forum/create/?$ pages/forum/index.php?method=createCategory [L,QSA]
+RewriteRule ^forum/category/([0-9]*)/?$ pages/forum/index.php?method=viewCategory&id=$1 [L,QSA]
+RewriteRule ^forum/category/([0-9]*)/new?$ pages/forum/index.php?method=newTopic&id=$1 [L,QSA]
+RewriteRule ^forum/topic/([0-9]*)?$ pages/forum/index.php?method=viewTopic&id=$1 [L,QSA]
+
+RewriteRule ^clan/?$ pages/clan/index.php [L,QSA]
+RewriteRule ^clan/create?$ pages/clan/create.php [L,QSA]
+RewriteRule ^clan/rating?$ pages/clan/info.php?method=rating [L,QSA]
+RewriteRule ^clan/([0-9]*)/?$ pages/clan/info.php?id=$1 [L,QSA]
+RewriteRule ^clan/([0-9]*)/bank/?$ pages/clan/info.php?id=$1&method=bank [L,QSA]
+RewriteRule ^clan/([0-9]*)/chat/?$ pages/clan/info.php?id=$1&method=chat [L,QSA]
+RewriteRule ^clan/([0-9]*)/members/?$ pages/clan/info.php?id=$1&method=members [L,QSA]
+RewriteRule ^clan/([0-9]*)/improve/?$ pages/clan/info.php?id=$1&method=improve [L,QSA]
+RewriteRule ^clan/([0-9]*)/settings/?$ pages/clan/info.php?id=$1&method=settings [L,QSA]
+RewriteRule ^clan/([0-9]*)/settings/edit?$ pages/clan/info.php?id=$1&method=edit [L,QSA]
+RewriteRule ^clan/([0-9]*)/settings/logs?$ pages/clan/info.php?id=$1&method=logs [L,QSA]
+RewriteRule ^clan/([0-9]*)/settings/members?$ pages/clan/info.php?id=$1&method=member [L,QSA]
+
+RewriteRule ^email/([A-Za-z0-9]*)?$ pages/phone/index.php?method=settings&confirm=$1 [L,QSA]
+
+RewriteRule ^phone/?$ pages/phone/index.php [L,QSA]
+RewriteRule ^phone/contacts?$ pages/phone/index.php?method=contacts [L,QSA]
+RewriteRule ^phone/settings?$ pages/phone/index.php?method=settings [L,QSA]
+RewriteRule ^phone/balance?$ pages/phone/index.php?method=balance [L,QSA]
+RewriteRule ^phone/notify?$ pages/phone/index.php?method=notify [L,QSA]
+RewriteRule ^phone/sms?$ pages/phone/index.php?method=sms [L,QSA]
+RewriteRule ^phone/sms/to?$ pages/phone/index.php?method=sms_to [L,QSA]
+RewriteRule ^phone/sms/new?$ pages/phone/index.php?method=sms_new [L,QSA]
+RewriteRule ^phone/sms/([0-9]*)/?$ pages/phone/index.php?method=sms_view&id=$1 [L,QSA]
+
+RewriteRule ^rating/?$ pages/other/rating.php [L,QSA]
+RewriteRule ^rating/online/?$ pages/other/rating.php?method=online [L,QSA]
+
+RewriteRule ^admin/?$ pages/admin/index.php [L,QSA]
+RewriteRule ^admin/users?$ pages/admin/index.php?method=users [L,QSA]
+
+RewriteRule ^chat/?$ pages/chat/update.php [L,QSA]
+RewriteRule ^chat/send/?$ pages/chat/send.php [L,QSA]
+RewriteRule ^chat/load/?$ pages/chat/updateLoad.php [L,QSA]
+
+RewriteRule ^npc/([0-9]*)/?$ pages/other/index.php?id=$1 [L,QSA]
+RewriteRule ^npc/([0-9]*)/list/?$ pages/other/index.php?id=$1&method=list [L,QSA]
+RewriteRule ^npc/([0-9]*)/craft/([0-9]*)?$ pages/other/index.php?id=$1&method=info&cid=$2 [L,QSA]
+
+RewriteRule ^market/equipment/([A-Za-z]*)/?$ pages/market/index.php?method=view&type=$1 [L,QSA]
+RewriteRule ^market/equipment/([A-Za-z]*)/([0-9]*)?$ pages/market/index.php?method=info&type=$1&wid=$2 [L,QSA]
+
+RewriteRule ^id([0-9]*)/?$ pages/account/profile.php?id=$1 [L,QSA]
+RewriteRule ^id([0-9]*)/equipment?$ pages/account/profile.php?method=equipment&id=$1 [L,QSA]
+RewriteRule ^image/profile/?$ pages/account/image.php [L,QSA]
+RewriteRule ^image/profile/([0-9]*)/([0-9]*)/([0-9]*)/([0-9]*)/([0-9]*)/?$ pages/account/image.php?head=$1&accessory=$2&top=$3&body=$4&boot=$5 [L,QSA]
+RewriteRule ^image/profile/([0-9]*)/([0-9]*)/([0-9]*)/([0-9]*)/([0-9]*)/([0-9]*)/?$ pages/account/image.php?head=$1&accessory=$2&top=$3&body=$4&boot=$5&back=$6 [L,QSA]
+RewriteRule ^inventory/equip/([0-9]*)/?$ pages/account/profile.php?method=inventory&equip=$1 [L,QSA]
+
+RewriteRule ^wiki/equipments/([0-9]*)/?$ pages/info/weapons.php?id=$1 [L,QSA]
+RewriteRule ^view/equipments/([0-9]*)/?$ pages/info/weapons.php?method=equipment&id=$1 [L,QSA]
